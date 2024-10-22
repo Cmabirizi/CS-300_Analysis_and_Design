@@ -1,1 +1,31 @@
-Runtime and Memory Analysis for Data Structures
+Runtime and Memory Analysis for Data Structures.
+This file provides a clear understanding of the different data structures used, their runtime performance, and memory implications, which is useful for selecting the appropriate structure for a given problem.
+
+1. Vector
+Runtime Analysis:
+Loading Data: O(n), where n is the number of elements being inserted. Each insertion is constant time on average, but there may be occasional resizing operations.
+Sorting: O(n log n), as the sort function typically uses a variant of the quicksort or mergesort algorithm.
+Searching for an Element: O(n), as a vector requires linear search unless the data is already sorted and binary search is used (which would be O(log n)).
+Memory Usage:
+A vector is dynamically resizable, with memory usage increasing linearly as more elements are added. Extra memory may be used for resizing when capacity is exceeded. The internal storage typically grows by doubling the capacity, leading to some unused memory space.
+
+2. Hash Table
+Runtime Analysis:
+Inserting Elements: O(1) on average, as hash table operations (insert, delete, search) generally occur in constant time, assuming a good hash function with few collisions.
+Searching for an Element: O(1) average case, but can degrade to O(n) in the worst case if many elements hash to the same bucket (collisions).
+Sorting: O(n log n), as the hash table does not maintain order. To sort the data, it must first be extracted into a list or array.
+Memory Usage:
+The memory usage of a hash table depends on its load factor and initial size. More memory is allocated when resizing occurs to maintain efficiency. Hash tables can consume more memory than necessary when sparsely populated.
+
+3. Binary Search Tree (BST)
+Runtime Analysis:
+Insertion: O(log n) for a balanced BST. If unbalanced, the runtime can degrade to O(n).
+Searching: O(log n) for a balanced BST. In the worst case, it can be O(n) if the tree becomes skewed.
+Sorting: O(n), as in-order traversal of the BST outputs the elements in sorted order.
+Memory Usage:
+Memory usage for a BST grows linearly with the number of nodes. Each node contains pointers to its left and right children, adding some overhead compared to an array-based structure.
+Summary Comparison
+Data Structure	Loading Runtime	Searching Runtime	Sorting Runtime	Memory Usage
+Vector	O(n)	O(n)	O(n log n)	Linear, with resizing
+Hash Table	O(1) (average)	O(1) (average)	O(n log n)	Depends on load factor
+Binary Search Tree	O(log n) (balanced)	O(log n) (balanced)	O(n)	Linear, with node overhead
